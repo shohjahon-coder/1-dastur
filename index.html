@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #1f242d;
+        }
+        
+        a {
+            position: relative;
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            text-transform: uppercase;
+            background: #262c37;
+            padding: 20px 60px;
+            transition: 0.5s;
+        }
+        
+        a:hover {
+            color: #00eeff;
+            letter-spacing: 0.25em;
+        }
+        
+        a span {
+            position: absolute;
+            display: block;
+            background: #00eeff;
+        }
+        
+        a span:nth-child(1) {
+            left: 0;
+            top: 0;
+            width: 50.5%;
+            height: 1.5px;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.5s;
+        }
+        
+        a:hover span:nth-child(1) {
+            transform: scaleX(1);
+            transform-origin: right;
+        }
+        
+        a span:nth-child(2) {
+            right: 0;
+            top: 0;
+            width: 50.5%;
+            height: 1.5px;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform 0.5s;
+        }
+        
+        a:hover span:nth-child(2) {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        a span:nth-child(3) {
+            margin-top: -57px;
+            right: 0;
+            left: 0;
+            width: 1.5px;
+            height: 100.5%;
+            transform-origin: bottom;
+            transform: scaleY(0);
+            transition: transform 0.5s;
+            transition-delay: 0.4s;
+        }
+        
+        a:hover span:nth-child(3) {
+            transform: scaleY(1);
+            transform-origin: top;
+        }
+        
+        a span:nth-child(4) {
+            bottom: 0;
+            right: 0;
+            width: 1.5px;
+            height: 100%;
+            transform-origin: bottom;
+            transform: scaleY(0);
+            transition: transform 0.5s;
+            transition-delay: 0.4s;
+        }
+        
+        a:hover span:nth-child(4) {
+            transform: scaleY(1);
+            transform-origin: top;
+        }
+        
+        a span:nth-child(5) {
+            left: 0;
+            bottom: 0;
+            width: 50.5%;
+            height: 1.5px;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform 0.5s;
+            transition-delay: 0.8s;
+        }
+        
+        a:hover span:nth-child(5) {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        a span:nth-child(6) {
+            right: 0;
+            bottom: 0;
+            width: 50.5%;
+            height: 1.5px;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.5s;
+            transition-delay: 0.8s;
+        }
+        
+        a:hover span:nth-child(6) {
+            transform: scaleX(1);
+            transform-origin: right;
+        }
+        
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: linear-gradient(90deg, rgba(2, 0, 0.6, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+        }
+        
+        .box div {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: transparent;
+            border: 6px solid rgba(255, 255, 255, 0.8);
+        }
+        
+        .box div:nth-child(1) {
+            top: 12%;
+            left: 42%;
+            animation: animate 10s linear infinite;
+        }
+        
+        .box div:nth-child(2) {
+            top: 70%;
+            left: 50%;
+            animation: animate 7s linear infinite;
+        }
+        
+        .box div:nth-child(3) {
+            top: 17%;
+            left: 6%;
+            animation: animate 9s linear infinite;
+        }
+        
+        .box div:nth-child(4) {
+            top: 20%;
+            left: 60%;
+            animation: animate 10s linear infinite;
+        }
+        
+        .box div:nth-child(5) {
+            top: 67%;
+            left: 10%;
+            animation: animate 6s linear infinite;
+        }
+        
+        .box div:nth-child(6) {
+            top: 80%;
+            left: 70%;
+            animation: animate 12s linear infinite;
+        }
+        
+        .box div:nth-child(7) {
+            top: 60%;
+            left: 80%;
+            animation: animate 15s linear infinite;
+        }
+        
+        .box div:nth-child(8) {
+            top: 37%;
+            left: 25%;
+            animation: animate 16s linear infinite;
+        }
+        
+        .box div:nth-child(9) {
+            top: 90%;
+            left: 25%;
+            animation: animate 9s linear infinite;
+        }
+        
+        .box div:nth-child(10) {
+            top: 20%;
+            left: 80%;
+            animation: animate 5s linear infinite;
+        }
+        
+        @keyframes animate {
+            0% {
+                transform: scale(0) translateY(0) rotate(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.3) translateY(-90px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <a href="estet/index2.html">
+            Enter
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
